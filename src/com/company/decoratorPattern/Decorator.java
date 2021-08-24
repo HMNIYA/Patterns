@@ -1,6 +1,6 @@
 package com.company.decoratorPattern;
 
-public class DecoratorPattern {
+class DecoratorPattern {
     public static void main(String[] args) {
         Tea simpleTea = new SimpleTea();
         Tea oloong = new Oolong(simpleTea);

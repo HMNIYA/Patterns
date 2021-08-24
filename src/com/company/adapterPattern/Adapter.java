@@ -1,6 +1,6 @@
 package com.company.adapterPattern;
 
-public class AdapterPattern {
+class AdapterPattern {
     public static void main(String[] args) {
         AmericanSocket socket = new SimpleAmericanSocket();
         Radio radio = new Radio();
