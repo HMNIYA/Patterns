@@ -14,7 +14,6 @@ interface Shape {
 }
 
 class Rectangle implements Shape {
-
     @Override
     public void draw() {
         System.out.println("Rectangle::draw()");
@@ -22,7 +21,6 @@ class Rectangle implements Shape {
 }
 
 class Square implements Shape {
-
     @Override
     public void draw() {
         System.out.println("Square::draw()");
@@ -30,7 +28,6 @@ class Square implements Shape {
 }
 
 class Circle implements Shape {
-
     @Override
     public void draw() {
         System.out.println("Circle::draw()");
@@ -58,15 +55,5 @@ class ShapeMaker {
 
     public void drawSquare() {
         square.draw();
-    }
-}
-
-class FacadePatternDemo {
-    public static void main(String[] args) {
-        ShapeMaker shapeMaker = new ShapeMaker();
-
-        shapeMaker.drawCircle();
-        shapeMaker.drawRectangle();
-        shapeMaker.drawSquare();
     }
 }
