@@ -2,42 +2,28 @@ package com.company.proxyPattern;
 
 public class Proxy {
     public static void main(String[] args) {
-        ExpensiveObject object = new ExpensiveObjectProxy();
-        object.process();
-        object.process();
+        Car car = new CarProxy();
+        car.drive();
     }
 }
 
-interface ExpensiveObject {
-    void process();
+interface Car {
+    void drive();
 }
 
-class ExpensiveObjectImpl implements ExpensiveObject {
-
-    public ExpensiveObjectImpl() {
-        heavyInitialConfiguration();
-    }
-
+class CarProxy implements Car {
+    Car car = new Reno();
     @Override
-    public void process() {
-        System.out.println("processing complete.");
+    public void drive() {
+        System.out.println("proxy is working.");
+        car.drive();
     }
-
-    private void heavyInitialConfiguration() {
-        System.out.println("Loading initial configuration...");
-    }
-
 }
 
-class ExpensiveObjectProxy implements ExpensiveObject {
-    private static ExpensiveObject object;
-
+class Reno implements Car {
     @Override
-    public void process() {
-        if (object == null) {
-            object = new ExpensiveObjectImpl();
-        }
-        object.process();
+    public void drive() {
+        System.out.println("drive reno.");
     }
 }
 
